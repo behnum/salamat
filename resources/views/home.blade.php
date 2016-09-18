@@ -7,8 +7,9 @@
 
             <h1>
                 {{ Auth::user()->name }}
-                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon glyphicon-plus"></span> Add New</a>
-                <a href="#" class="btn btn-warning">Settings</a>
+                <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add New</a>
+                <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-cog">
+</i></a>
 
             </h1>
 
@@ -17,42 +18,68 @@
             <br><br>
                 
             <div class="panel panel-default">
-                <div class="panel-heading">Summary</div>
+                <div class="panel-heading">Quick Glance</div>
 
                 <div class="panel-body">
-                    So far, you ran for <b>123</b> kilometers in <b>123</b> sessions.<br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae hic dolor possimus mollitia perferendis facere illo consectetur dolorem temporibus quod eum itaque laudantium cumque dolores quas saepe iusto, doloribus provident!
+                    <i class="glyphicon glyphicon-leaf"></i> 
+                    You ran for <b>123</b> kilometers in <b>123</b> sessions.<br>
+                    <i class="glyphicon glyphicon-gift"></i>
+                    The total number of active calories is: 456 Cal .<br>
                 </div>
             </div>
 
             <div class="panel panel-default">
                 <div class="panel-heading">Log</div>
 
-                <div class="panel-body">
+                <div class="panel-body table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
                                 <th>Date</th>
-                                <th>Time</th>
                                 <th>Active Cal</th>
                                 <th>Avg. Pace</th>
                                 <th>Distance</th>
                                 <th>Weight</th>
+                                <th>Modify</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a></th>
-                                <th>1/Mehr/1395</th>
-                                <th>7:15 AM</th>
+                                <th>3/Mehr/1395</th>
                                 <th>226</th>
                                 <th>10'06''/KM</th>
                                 <th>3.53KM</th>
                                 <th>87KG</th>
+                                <th>
+                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>2/Mehr/1395</th>
+                                <th>226</th>
+                                <th>10'06''/KM</th>
+                                <th>3.53KM</th>
+                                <th>87KG</th>
+                                <th>
+                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>1/Mehr/1395</th>
+                                <th>226</th>
+                                <th>10'06''/KM</th>
+                                <th>3.53KM</th>
+                                <th>87KG</th>
+                                <th>
+                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                </th>
                             </tr>
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </div>
