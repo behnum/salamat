@@ -10,18 +10,22 @@
                 <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add New</a>
                 <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-cog">
 </i></a>
-
             </h1>
 
-            
+            <br>
 
-            <br><br>
-                
+            <div class="alert alert-warning alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Warning!</strong> This is an early Beta version! Things might break.
+            </div>
+
+            <br>
+
             <div class="panel panel-default">
                 <div class="panel-heading">Quick Glance</div>
 
                 <div class="panel-body">
-                    <i class="glyphicon glyphicon-leaf"></i> 
+                    <i class="glyphicon glyphicon-leaf"></i>
                     You ran for <b>123</b> kilometers in <b>123</b> sessions.<br>
                     <i class="glyphicon glyphicon-gift"></i>
                     The total number of active calories is: 456 Cal .<br>
@@ -79,7 +83,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    
+
                 </div>
             </div>
         </div>

@@ -35,7 +35,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <i class="glyphicon glyphicon-heart-empty align-middle"></i> {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
 
@@ -62,7 +62,7 @@
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        <i class="glyphicon glyphicon-log-out"></i> Logout
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
