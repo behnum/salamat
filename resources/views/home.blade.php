@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- Modals -->
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <p>Put the settings content here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / End of Modals -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -13,12 +35,12 @@
             <h1>
                 {{ Auth::user()->name }}
 
-                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  <i class="glyphicon glyphicon-plus"></i> Add New
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addNewCollapse" aria-expanded="false" aria-controls="addNewCollapse">
+                  <i class="glyphicon glyphicon-plus"></i> Add
                 </button>
             </h1>
 <hr>
-                <div class="collapse" id="collapseExample">
+                <div class="collapse" id="addNewCollapse">
       
                   <div class="panel panel-default">
                       <div class="panel-heading">Add a Record</div>
@@ -31,7 +53,7 @@
                 </div>
 
             <br>
-            
+
             <div class="panel panel-default">
                 <div class="panel-heading">Quick Glance</div>
 
