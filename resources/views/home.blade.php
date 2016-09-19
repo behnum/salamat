@@ -1,23 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- Modals -->
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+        <p>Put the settings content here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / End of Modals -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            <h1>
-                {{ Auth::user()->name }}
-                <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add New</a>
-                <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-cog">
-</i></a>
-            </h1>
-
-            <br>
-
             <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Warning!</strong> This is an early Beta version! Things might break.
+              <strong>Warning!</strong> This is an early Beta version! Things might go wonky.
             </div>
+
+            <h1>
+                {{ Auth::user()->name }}
+
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addNewCollapse" aria-expanded="false" aria-controls="addNewCollapse">
+                  <i class="glyphicon glyphicon-plus"></i> Add
+                </button>
+            </h1>
+<hr>
+                <div class="collapse" id="addNewCollapse">
+      
+                  <div class="panel panel-default">
+                      <div class="panel-heading">Add a Record</div>
+
+                      <div class="panel-body">
+                        <p>Add it here.</p>
+                      </div>
+                  </div>
+
+                </div>
 
             <br>
 
@@ -49,29 +82,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>3/Mehr/1395</th>
-                                <th>226</th>
-                                <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
-                                <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>2/Mehr/1395</th>
-                                <th>226</th>
-                                <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
-                                <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>1/Mehr/1395</th>
+                                <th>3/7/95</th>
                                 <th>226</th>
                                 <th>10'06''/KM</th>
                                 <th>3.53KM</th>
