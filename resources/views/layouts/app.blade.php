@@ -59,6 +59,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
+                                    <a href="#"><i class="glyphicon glyphicon-cog"></i> Settings</a>
+                                </li>
+                                <li>
                                     <a href="{{ url('/logout') }}"
                                         onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
