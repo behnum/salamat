@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
+    if (Auth::check()) {
+            return redirect('/home');
+    }
+
     return view('welcome');
 });
+
+Auth::routes(); // todo: q
+
+Route::get('/home', 'HomeController@index');
