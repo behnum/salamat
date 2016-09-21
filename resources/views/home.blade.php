@@ -3,25 +3,7 @@
 @section('content')
 
 <!-- Modals -->
-<!-- Settings Modal -->
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Settings</h4>
-      </div>
-      <div class="modal-body">
-        <p>Put the settings content here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- / End of Modals -->
+@include('includes.modals')
 
 <div class="container">
     <div class="row">
@@ -85,10 +67,10 @@
                                 <th>3/7/95</th>
                                 <th>226</th>
                                 <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
+                                <th>3.53 KM</th>
+                                <th>87 KG</th>
                                 <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
                                     <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
