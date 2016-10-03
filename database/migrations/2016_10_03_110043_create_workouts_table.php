@@ -15,6 +15,9 @@ class CreateWorkoutsTable extends Migration
     {
         Schema::create('workouts', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade');
             $table->dateTime('date');
             $table->string('active_cal', 15);
             $table->string('avg_pace', 45);
