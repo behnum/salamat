@@ -15,6 +15,11 @@ class CreateWorkoutsTable extends Migration
     {
         Schema::create('workouts', function (Blueprint $table) {
             $table->increments('id');
+            $table->dateTime('date');
+            $table->string('active_cal', 15);
+            $table->string('avg_pace', 45);
+            $table->string('distance', 15);
+            $table->string('weight', 15);
             $table->timestamps();
         });
     }
