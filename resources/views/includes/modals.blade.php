@@ -31,15 +31,15 @@
       <div class="modal-body">
         <form class="form-horizontal">
         <div class="form-group">
-            <label for="inputDate" class="col-sm-2 control-label">Date</label>
+            <label for="inputDateEdit" class="col-sm-2 control-label">Date</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputDate" placeholder="Date" value="3/7/95">
+            <input type="text" class="form-control" id="inputDateEdit" placeholder="Date" value="3/7/95">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
+            <label for="inputActiveCalEdit" class="col-sm-2 control-label">Active Cal</label>
             <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal" value="226">
+            <input type="text" class="form-control" id="inputActiveCalEdit" placeholder="Active Cal" value="226">
             </div>
         </div>
         </form>
