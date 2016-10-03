@@ -1,23 +1,70 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- Modals -->
+@include('includes.modals')
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            <h1>
-                {{ Auth::user()->name }}
-                <a href="#" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add New</a>
-                <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-cog">
-</i></a>
-            </h1>
-
-            <br>
-
             <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Warning!</strong> This is an early Beta version! Things might break.
+              <strong>Warning!</strong> This is an early Beta version! Things might go wonky.
             </div>
+
+            <h1>
+                {{ Auth::user()->name }}
+
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addNewCollapse" aria-expanded="false" aria-controls="addNewCollapse">
+                  <i class="glyphicon glyphicon-plus"></i> Add
+                </button>
+            </h1>
+<hr>
+                <div class="collapse" id="addNewCollapse">
+      
+                  <div class="panel panel-default">
+                      <div class="panel-heading">Add a Record</div>
+
+                      <div class="panel-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputDate" placeholder="Date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAvgPace" class="col-sm-2 control-label">Avg. Pace</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDistance" class="col-sm-2 control-label">Distance</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputDistance" placeholder="Distance">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputWeight" class="col-sm-2 control-label">Weight</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputWeight" placeholder="Weight">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-success">Save</button>
+                        </form>
+                      </div>
+                  </div>
+
+                </div>
 
             <br>
 
@@ -49,35 +96,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>3/Mehr/1395</th>
+                                <th>3/7/95</th>
                                 <th>226</th>
                                 <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
+                                <th>3.53 KM</th>
+                                <th>87 KG</th>
                                 <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>2/Mehr/1395</th>
-                                <th>226</th>
-                                <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
-                                <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>1/Mehr/1395</th>
-                                <th>226</th>
-                                <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
-                                <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
                                     <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
