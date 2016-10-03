@@ -3,25 +3,7 @@
 @section('content')
 
 <!-- Modals -->
-<!-- Settings Modal -->
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Settings</h4>
-      </div>
-      <div class="modal-body">
-        <p>Put the settings content here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- / End of Modals -->
+@include('includes.modals')
 
 <div class="container">
     <div class="row">
@@ -46,7 +28,39 @@
                       <div class="panel-heading">Add a Record</div>
 
                       <div class="panel-body">
-                        <p>Add it here.</p>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputDate" placeholder="Date">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAvgPace" class="col-sm-2 control-label">Avg. Pace</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDistance" class="col-sm-2 control-label">Distance</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputDistance" placeholder="Distance">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputWeight" class="col-sm-2 control-label">Weight</label>
+                                <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputWeight" placeholder="Weight">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-block btn-success">Save</button>
+                        </form>
                       </div>
                   </div>
 
@@ -85,10 +99,10 @@
                                 <th>3/7/95</th>
                                 <th>226</th>
                                 <th>10'06''/KM</th>
-                                <th>3.53KM</th>
-                                <th>87KG</th>
+                                <th>3.53 KM</th>
+                                <th>87 KG</th>
                                 <th>
-                                    <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
                                     <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
