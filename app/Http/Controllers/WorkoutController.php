@@ -18,7 +18,11 @@ class WorkoutController extends Controller
 
     public function save(Request $request) {
       $validator = Validator::make($request->all(), [
-        'date' => 'required|max:2',
+        'date' => 'required|date',
+        'activeCal' => 'required|max:4',
+        'avgPace' => 'required',
+        'distance' => 'required|max:10',
+        'weight' => 'required|numeric|max:3',
       ]);
 
       if ($validator->fails()) {

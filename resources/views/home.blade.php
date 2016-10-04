@@ -21,7 +21,15 @@
                   <i class="glyphicon glyphicon-plus"></i> Add
                 </button>
             </h1>
-<hr>
+            <hr>
+            @if($errors->any())
+              <div class="alert alert-danger" role="alert">
+                <strong>Something looks wrong!</strong>
+                <hr>
+                {{ implode('', $errors->all(':message')) }}
+              </div>
+              <br>
+            @endif
                 <div class="collapse" id="addNewCollapse">
 
                   <div class="panel panel-default">
@@ -33,31 +41,31 @@
                             <div class="form-group">
                                 <label for="inputDate" class="col-sm-2 control-label">Date</label>
                                 <div class="col-sm-10">
-                                <input name="date" type="text" class="form-control" id="inputDate" placeholder="Date">
+                                <input name="date" type="text" class="form-control" id="inputDate" placeholder="Date" value="{{ old('date') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
                                 <div class="col-sm-10">
-                                <input name="activeCal" type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal">
+                                <input name="activeCal" type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal" value="{{ old('activeCal') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAvgPace" class="col-sm-2 control-label">Avg. Pace</label>
                                 <div class="col-sm-10">
-                                <input name="avgPace" type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace">
+                                <input name="avgPace" type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace" value="{{ old('avgPace') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputDistance" class="col-sm-2 control-label">Distance</label>
                                 <div class="col-sm-10">
-                                <input name="distance" type="text" class="form-control" id="inputDistance" placeholder="Distance">
+                                <input name="distance" type="text" class="form-control" id="inputDistance" placeholder="Distance" value="{{ old('distance') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputWeight" class="col-sm-2 control-label">Weight</label>
                                 <div class="col-sm-10">
-                                <input name="weight" type="text" class="form-control" id="inputWeight" placeholder="Weight">
+                                <input name="weight" type="text" class="form-control" id="inputWeight" placeholder="Weight" value="{{ old('weight') }}">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-block btn-success">Save</button>
