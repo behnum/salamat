@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Requests;
+use Illuminate\Support\Facades\Redirect;
 
 class WorkoutController extends Controller
 {
@@ -13,7 +16,17 @@ class WorkoutController extends Controller
       $this->middleware('auth');
     }
 
-    public function save() {
-      return 'Works! Saved!';
+    public function save(Request $request) {
+      $validator = Validator::make($request->all(), [
+        'date' => 'required|max:2',
+      ]);
+
+      if ($validator->fails()) {
+        return redirect::back()
+        -> withErrors($validator)
+        -> withInput();
+      }
+
+      return 'Everything passed.';
     }
 }
