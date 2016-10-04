@@ -24,13 +24,21 @@
             <hr>
             @if($errors->any())
               <div class="alert alert-danger" role="alert">
-                <strong>Something looks wrong!</strong>
+                <strong>Error!</strong>
                 <hr>
-                {{ implode('', $errors->all(':message')) }}
-              </div>
-              <br>
+                <ul>
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
             @endif
-                <div class="collapse" id="addNewCollapse">
+
+            @if($errors->any())
+              <div class="" id="addNewCollapse">
+            @else
+              <div class="collapse" id="addNewCollapse">
+            @endif
 
                   <div class="panel panel-default">
                       <div class="panel-heading">Add a Record</div>
