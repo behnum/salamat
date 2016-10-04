@@ -23,12 +23,13 @@
             </h1>
 <hr>
                 <div class="collapse" id="addNewCollapse">
-      
+
                   <div class="panel panel-default">
                       <div class="panel-heading">Add a Record</div>
 
                       <div class="panel-body">
-                        <form class="form-horizontal">
+                        <form action="save" method="POST" class="form-horizontal">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="inputDate" class="col-sm-2 control-label">Date</label>
                                 <div class="col-sm-10">
