@@ -102,7 +102,7 @@
                     The total number of active calories is: 456 Cal .<br>
                 </div>
             </div>
-
+            @if(isset($data))
             <div class="panel panel-default">
                 <div class="panel-heading">Log</div>
 
@@ -119,22 +119,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($data as $item)
                             <tr>
-                                <th>3/7/95</th>
-                                <th>226</th>
-                                <th>10'06''/KM</th>
-                                <th>3.53 KM</th>
-                                <th>87 KG</th>
+                                <th>{{ $item['date'] }}</th>
+                                <th>{{ $item['active_cal'] }}</th>
+                                <th>{{ $item['avg_pace'] }}/KM</th>
+                                <th>{{ $item['distance'] }} KM</th>
+                                <th>{{ $item['weight'] }} KG</th>
                                 <th>
                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
                                     <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
 
                 </div>
             </div>
+            @endif
+
         </div>
     </div>
 </div>
