@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Workout;
+
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,10 +22,10 @@ class WorkoutController extends Controller
     public function save(Request $request) {
       $validator = Validator::make($request->all(), [
         'date' => 'required|date',
-        'activeCal' => 'required|max:4',
-        'avgPace' => 'required',
+        'active_cal' => 'required|max:4',
+        'avg_pace' => 'required',
         'distance' => 'required|max:10',
-        'weight' => 'required|numeric|max:3',
+        'weight' => 'required|numeric|max:440',
       ]);
 
       if ($validator->fails()) {
@@ -31,6 +34,11 @@ class WorkoutController extends Controller
         -> withInput();
       }
 
-      return 'Everything passed.';
+      // Validator passed. Persist data to database
+      $workout = new Workout($request->all());
+      Auth::user()->workouts()->save($workout);
+
+      return redirect::back()
+      -> with('message', 'Workout Saved.');
     }
 }

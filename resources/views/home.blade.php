@@ -22,6 +22,13 @@
                 </button>
             </h1>
             <hr>
+            @if(session('message'))
+              <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Success!</strong><hr>
+                {{ session('message') }}
+              </div>
+            @endif
             @if($errors->any())
               <div class="alert alert-danger" role="alert">
                 <strong>Error!</strong>
@@ -55,13 +62,13 @@
                             <div class="form-group">
                                 <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
                                 <div class="col-sm-10">
-                                <input name="activeCal" type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal" value="{{ old('activeCal') }}">
+                                <input name="active_cal" type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal" value="{{ old('active_cal') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAvgPace" class="col-sm-2 control-label">Avg. Pace</label>
                                 <div class="col-sm-10">
-                                <input name="avgPace" type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace" value="{{ old('avgPace') }}">
+                                <input name="avg_pace" type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace" value="{{ old('avg_pace') }}">
                                 </div>
                             </div>
                             <div class="form-group">
