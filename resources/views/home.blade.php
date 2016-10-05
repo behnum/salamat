@@ -21,42 +21,66 @@
                   <i class="glyphicon glyphicon-plus"></i> Add
                 </button>
             </h1>
-<hr>
-                <div class="collapse" id="addNewCollapse">
-      
+            <hr>
+            @if(session('message'))
+              <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Success!</strong><hr>
+                {{ session('message') }}
+              </div>
+            @endif
+            @if($errors->any())
+              <div class="alert alert-danger" role="alert">
+                <strong>Error!</strong>
+                <hr>
+                <ul>
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+            @endif
+
+            @if($errors->any())
+              <div class="" id="addNewCollapse">
+            @else
+              <div class="collapse" id="addNewCollapse">
+            @endif
+
                   <div class="panel panel-default">
                       <div class="panel-heading">Add a Record</div>
 
                       <div class="panel-body">
-                        <form class="form-horizontal">
+                        <form action="save" method="POST" class="form-horizontal">
+                            {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="inputDate" class="col-sm-2 control-label">Date</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputDate" placeholder="Date">
+                                <input name="date" type="text" class="form-control" id="inputDate" placeholder="Date" value="{{ old('date') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputActiveCal" class="col-sm-2 control-label">Active Cal</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal">
+                                <input name="active_cal" type="text" class="form-control" id="inputActiveCal" placeholder="Active Cal" value="{{ old('active_cal') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputAvgPace" class="col-sm-2 control-label">Avg. Pace</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace">
+                                <input name="avg_pace" type="text" class="form-control" id="inputAvgPace" placeholder="Avg. Pace" value="{{ old('avg_pace') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputDistance" class="col-sm-2 control-label">Distance</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputDistance" placeholder="Distance">
+                                <input name="distance" type="text" class="form-control" id="inputDistance" placeholder="Distance" value="{{ old('distance') }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputWeight" class="col-sm-2 control-label">Weight</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputWeight" placeholder="Weight">
+                                <input name="weight" type="text" class="form-control" id="inputWeight" placeholder="Weight" value="{{ old('weight') }}">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-block btn-success">Save</button>
