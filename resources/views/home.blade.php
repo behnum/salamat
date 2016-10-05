@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            <div class="alert alert-warning alert-dismissible" role="alert">
+            <!-- <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Warning!</strong> This is an early Beta version! Things might go wonky.
-            </div>
+            </div> -->
 
             <h1>
                 {{ Auth::user()->name }}
