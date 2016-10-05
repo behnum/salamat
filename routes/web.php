@@ -22,3 +22,4 @@ Route::get('/', function () {
 Auth::routes(); // todo: q
 
 Route::get('/home', 'HomeController@index');
+Route::post('/save', 'WorkoutController@save');
