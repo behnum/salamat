@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-            <div class="alert alert-warning alert-dismissible" role="alert">
+            <!-- <div class="alert alert-warning alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <strong>Warning!</strong> This is an early Beta version! Things might go wonky.
-            </div>
+            </div> -->
 
             <h1>
                 {{ Auth::user()->name }}
@@ -128,7 +128,7 @@
                                 <th>{{ $item['weight'] }} KG</th>
                                 <th>
                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a>
+                                    <a href="./remove/{{ $item['id'] }}" class="btn btn-danger" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
                         @endforeach

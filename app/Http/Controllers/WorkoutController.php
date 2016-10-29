@@ -41,4 +41,19 @@ class WorkoutController extends Controller
       return redirect::back()
       -> with('message', 'Workout Saved.');
     }
+
+    public function remove($item_id) {
+      if (!$item_id || $item_id == null) {
+        abort(403);
+      }
+
+      // todo: do more error checking on $item_id
+
+      // $deletedItem = new Workout()->where('id', $item_id)->delete();
+      $workout = Workout::find($item_id);
+      $workout->delete();
+
+      return redirect::back()
+      -> with('message', 'Workout Removed.');
+    }
 }
