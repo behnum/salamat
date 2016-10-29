@@ -23,3 +23,4 @@ Auth::routes(); // todo: q
 
 Route::get('/home', 'HomeController@index');
 Route::post('/save', 'WorkoutController@save');
+Route::get('/remove/{item_id}', 'WorkoutController@remove');
