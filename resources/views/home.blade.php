@@ -128,7 +128,7 @@
                                 <th>{{ $item['weight'] }} KG</th>
                                 <th>
                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a href="./remove/{{ $item['id'] }}" class="btn btn-danger" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
+                                    <a id="remove-btn" href="./remove/{{ $item['id'] }}" class="btn btn-danger" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
                         @endforeach
