@@ -13,8 +13,19 @@ require('./bootstrap');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: 'body'
+// const app = new Vue({
+//     el: 'body'
+// });
+
+$(document).ready(function() {
+
+  $("#datePicker").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+
+  $('.remove-btn').click(function (e) {
+    if(!confirm('Are you sure?')) {
+      e.preventDefault();
+    }
+  });
 });
