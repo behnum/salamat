@@ -54,9 +54,9 @@
                         <form action="save" method="POST" class="form-horizontal">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="inputDate" class="col-sm-2 control-label">Date</label>
+                                <label for="datePicker" class="col-sm-2 control-label">Date</label>
                                 <div class="col-sm-10">
-                                <input name="date" type="text" class="form-control" id="inputDate" placeholder="Date" value="{{ old('date') }}">
+                                <input name="date" type="text" class="form-control" id="datePicker" placeholder="Date" value="{{ old('date') }}">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -128,7 +128,7 @@
                                 <th>{{ $item['weight'] }} KG</th>
                                 <th>
                                     <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
-                                    <a id="remove-btn" href="./remove/{{ $item['id'] }}" class="btn btn-danger" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
+                                    <a id="remove-btn" href="./remove/{{ $item['id'] }}" class="btn btn-danger remove-btn" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>
                         @endforeach

@@ -20,7 +20,10 @@ require('./bootstrap');
 // });
 
 $(document).ready(function() {
-  $('#remove-btn').click(function (e) {
+
+  $("#datePicker").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+
+  $('.remove-btn').click(function (e) {
     if(!confirm('Are you sure?')) {
       e.preventDefault();
     }
