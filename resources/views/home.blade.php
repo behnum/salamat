@@ -95,12 +95,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Quick Glance</div>
 
-                <div class="panel-body">
-                    <i class="glyphicon glyphicon-leaf"></i>
-                    You ran for <b>123</b> kilometers in <b>123</b> sessions.<br>
-                    <i class="glyphicon glyphicon-gift"></i>
-                    The total number of active calories is: 456 Cal .<br>
-                </div>
+                @if(isset($stats))
+                    <div class="panel-body">
+                        <i class="glyphicon glyphicon-leaf"></i>
+                        You ran for <b>{{ $stats['totalDist'] }}</b> kilometers in <b>{{ $stats['itemsCount'] }}</b> sessions.<br>
+                        <i class="glyphicon glyphicon-gift"></i>
+                        The total number of active calories is: <b>{{ $stats['activeCal'] }}</b> Cal.<br>
+                    </div>
+                @else
+                    <div class="panel-body">No data to display.</div>
+                @endif
             </div>
             @if(isset($data))
             <div class="panel panel-default">
@@ -115,7 +119,7 @@
                                 <th>Avg. Pace</th>
                                 <th>Distance</th>
                                 <th>Weight</th>
-                                <th>Modify</th>
+                                <th>Remove</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -127,7 +131,7 @@
                                 <th>{{ $item['distance'] }} KM</th>
                                 <th>{{ $item['weight'] }} KG</th>
                                 <th>
-                                    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a>
+                                    <!-- <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-wrench"></i></a> -->
                                     <a id="remove-btn" href="./remove/{{ $item['id'] }}" class="btn btn-danger remove-btn" title="Remove Item"><i class="glyphicon glyphicon-trash"></i></a>
                                 </th>
                             </tr>

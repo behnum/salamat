@@ -30,7 +30,20 @@ class HomeController extends Controller
                 ->orderBy('date', 'desc')
                 ->get()->toArray();
 
-        return view('home')->with('data', $data);
+        $totalDist = 0;
+        $activeCal = 0;
+
+        foreach($data as $current) {
+            $totalDist += $current['distance'];
+            $activeCal += $current['active_cal'];
+        }
+
+        $stats['totalDist'] = $totalDist;
+        $stats['itemsCount'] = count($data);
+        $stats['activeCal'] = $activeCal;
+
+
+        return view('home')->with('data', $data)->with('stats', $stats);
     }
 
 }
