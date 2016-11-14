@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
         <label>
-            <input type="checkbox" value="">
+            <input type="checkbox" value="" disabled>
             Receive updates via Email.
         </label>
       </div>
@@ -21,7 +21,7 @@
 </div>
 
 <!-- Edit Modal -->
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
+<!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -50,4 +50,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
