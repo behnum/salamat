@@ -15,7 +15,7 @@
             </div> -->
 
             <h1>
-                {{ Auth::user()->name }}
+                🏃🏻 {{ Auth::user()->name }}
 
                 <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addNewCollapse" aria-expanded="false" aria-controls="addNewCollapse">
                   <i class="glyphicon glyphicon-plus"></i> Add
@@ -93,7 +93,7 @@
             <br>
 
             <div class="panel panel-default">
-                <div class="panel-heading">Quick Glance</div>
+                <div class="panel-heading">🛎 Quick Glance</div>
 
                 @if(isset($stats))
                     <div class="panel-body">
