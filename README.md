@@ -1,7 +1,7 @@
 # 🏃🏻 Salamat
-A primitive, personal and Persian Running Log to stay motivated.
+A simple Running Tracker in Persian to help you stay motivated.
 
-## 🍚 Todo
+## Todo
 * Log all the work times
 * Use git flow
 * Use Sass / MySQL
